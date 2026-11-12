@@ -19,6 +19,46 @@ button{font:inherit;color:inherit}.game{position:relative;width:min(1120px,100%)
 @media(max-width:680px){body{padding:0;background:#f5ece6}.game{width:100%;height:100dvh;min-height:0;border:0;border-radius:0}.topbar{height:55px;padding:0 17px}.brand{font-size:11px}.chapter{font-size:10px}.top-right{gap:7px}.stage{flex:1}.sun{width:95px;height:95px;right:15%;top:12%}.character{height:61%;width:70%;bottom:18%}.character.left{left:31%}.character.right{left:69%}.dialogue-wrap{min-height:240px;padding:0 12px max(15px,env(safe-area-inset-bottom));background:linear-gradient(transparent,rgba(255,250,244,.98) 20%)}.dialogue{padding:24px 20px 47px;min-height:200px;border-radius:16px}.dialogue-text{font-size:15px;line-height:1.62}.speaker{font-size:10px;margin-bottom:8px}.choices{grid-template-columns:1fr!important;gap:7px;margin-top:14px}.choice{padding:10px 12px}.next{bottom:14px;right:15px}.nameplate{left:15px;top:15px;font-size:10px}.chapter-pill{right:14px;top:15px;font-size:9px}.title-card{padding:37px 24px 31px}.title-card p{font-size:13px}}
 @media(max-height:700px) and (min-width:681px){.game{height:calc(100dvh - 24px);min-height:520px}.dialogue-wrap{min-height:205px}.character{height:76%}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+
+/* Original urban-anime direction: bold cel accents, streetwear details and a neon-night interface. */
+:root{--ink:#f4f3f5;--muted:#a5a9b5;--rose:#ff536f;--cream:#111722;--line:rgba(255,255,255,.1);--shadow:0 28px 90px rgba(0,0,0,.5)}
+body{background:#0b1018;color:#f4f3f5;font-family:Inter,"Avenir Next",Avenir,"Segoe UI",sans-serif}
+body:before{background:radial-gradient(ellipse at 9% 12%,#582547 0,transparent 32%),radial-gradient(ellipse at 92% 78%,#123c4b 0,transparent 30%),linear-gradient(135deg,#101521,#171421 60%,#0d1b25)}
+.game{background:#111722;border:1px solid rgba(255,255,255,.12);border-radius:18px;box-shadow:0 28px 90px #0009}
+.topbar{background:#111722;border-color:rgba(255,255,255,.1)}
+.brand{color:#f7f5f8;letter-spacing:.17em}.brand-mark{background:#ff536f;color:#15121b;border-radius:8px;box-shadow:0 0 20px #ff536f66}
+.chapter,.sound-btn,.restart-btn{color:#a5a9b5}.sound-btn:hover,.restart-btn:hover{color:#43d8e6}
+.stage{background:#161c2b}
+.scene-art{background:linear-gradient(180deg,#403052 0%,#a64c69 28%,#e67869 48%,#254151 78%,#101722 100%)}
+.sun{background:#ffb36b;box-shadow:0 0 80px 30px #ff7b7366}
+.cloud{background:rgba(255,198,193,.34)}
+.distant{background:#463b58;opacity:.85;clip-path:polygon(0 70%,6% 70%,6% 37%,12% 37%,12% 57%,18% 57%,18% 18%,26% 18%,26% 69%,33% 69%,33% 42%,40% 42%,40% 11%,48% 11%,48% 68%,55% 68%,55% 34%,63% 34%,63% 62%,70% 62%,70% 22%,79% 22%,79% 69%,86% 69%,86% 39%,93% 39%,93% 58%,100% 58%,100% 100%,0 100%)}
+.trees,.fence{display:none}.path{width:46%;left:27%;height:34%;clip-path:polygon(43% 0,57% 0,100% 100%,0 100%);background:linear-gradient(90deg,transparent,#ffb36b30 50%,transparent)}.petals{opacity:.3;filter:hue-rotate(160deg)}
+.ground{background:linear-gradient(170deg,#32424b,#101722)}
+.path{background:linear-gradient(90deg,transparent,#f3a27755 48%,transparent);opacity:.9}
+.fence{background:#ffb36b55;box-shadow:0 14px #ffb36b33,0 28px #ffb36b22}.fence:after{opacity:.6}
+.petals{opacity:.42;filter:hue-rotate(160deg)}
+.character{filter:drop-shadow(0 12px 18px #090a18aa) drop-shadow(0 0 16px #47d9e644);animation:character-arrive .42s cubic-bezier(.2,.8,.2,1) both}
+.character.hidden{animation:none}
+.char-svg{position:relative;z-index:1;overflow:visible}
+.character:before{content:"";position:absolute;z-index:0;left:13%;right:13%;bottom:3%;height:62%;background:linear-gradient(145deg,#43d8e633,#ff536f22);clip-path:polygon(22% 0,78% 0,100% 100%,0 100%);filter:blur(20px)}
+@keyframes character-arrive{from{opacity:0;transform:translate(-50%,16px) scale(.97)}to{opacity:1;transform:translate(-50%,0) scale(1)}}
+.nameplate{background:#111722c9;border:1px solid #ffffff25;color:#f7f5f8;backdrop-filter:blur(10px)}
+.chapter-pill{background:#121824b8;border:1px solid #ffffff20;color:#56e3eb}
+.dialogue-wrap{background:linear-gradient(transparent,#10151ff5 32%)}
+.dialogue{background:rgba(17,23,34,.97);border:1px solid #ffffff1b;border-radius:14px;box-shadow:0 16px 42px #05070bb3}
+.speaker{color:#ff7184}.dialogue-text{color:#f2eff4}
+.next{color:#4bdde5}.next:hover{color:#ff7184}
+.choice{background:#171f2c;border-color:#374152;color:#f6f3f5}.choice span{color:#62dbe2}
+.choice:hover,.choice:focus-visible{border-color:#ff657b;background:#24202e;box-shadow:0 7px 22px #ff536f22}
+.progress{background:#222a36}.progress-fill{background:linear-gradient(90deg,#ff536f,#ffb36b,#43d8e6)}
+.overlay{background:linear-gradient(145deg,#080d16bb,#171020d9);backdrop-filter:blur(8px)}
+.title-card{background:#111722f5;border:1px solid #ffffff23;border-radius:18px;box-shadow:0 30px 90px #000b;text-align:left;position:relative;overflow:hidden}
+.title-card:before{content:"";position:absolute;left:0;top:0;width:5px;height:100%;background:linear-gradient(#ff536f,#43d8e6)}
+.eyebrow{color:#53dfe7}.title-card h1{font-family:Inter,"Avenir Next",sans-serif;font-weight:900;letter-spacing:-.06em;color:#f6f2f6;text-transform:uppercase}.title-card h1 em{font-style:normal;color:#ff657b}
+.title-card p{color:#b4b1bd}.start-btn{background:#ff536f;color:#17111b;box-shadow:0 8px 22px #ff536f42}.start-btn:hover{background:#ff7587}
+.tiny-note{color:#9295a3!important}.ending h2{color:#f7f2f5}.ending p{color:#b4b1bd}.secondary-btn{background:#171f2c;border-color:#404755;color:#60dce3}.secondary-btn:hover{background:#252b38}.sound-label{color:#a5a9b5}
+@media(max-width:680px){body{background:#0b1018}.game{border-radius:0}.dialogue-wrap{background:linear-gradient(transparent,#10151ff9 20%)}.title-card{text-align:left}.title-card h1{font-size:clamp(38px,12vw,58px)}}
 </style>
 </head>
 <body>
@@ -79,9 +119,18 @@ const routeStories={
 };
 
 const $=id=>document.getElementById(id);
+const streetwearDetails=key=>{const accent=key==='akari'?'#ff536f':'#43d8e6',trim=key==='akari'?'#ffc078':'#b9a2ff';return `<g class="fashion-layer" stroke-linejoin="round" stroke-linecap="round">
+  <path d="M105 118Q111 31 180 22Q249 31 255 118" fill="none" stroke="#20202d" stroke-width="13"/><path d="M106 111Q117 36 180 27Q241 36 254 111" fill="none" stroke="${accent}" stroke-width="3"/>
+  <path d="M91 166Q100 154 112 163L118 191Q106 202 94 193Z M246 163Q259 154 268 166L265 193Q253 202 242 191Z" fill="#252433" stroke="#12131d" stroke-width="4"/><path d="M96 173L111 169 113 188 99 191Z M250 169L264 173 261 191 247 188Z" fill="${accent}" stroke="#fff" stroke-opacity=".4" stroke-width="2"/>
+  <path d="M120 257L151 270 174 303 146 328 128 313 108 325 99 316Z" fill="#272838" stroke="#171824" stroke-width="5"/><path d="M240 257L209 270 186 303 214 328 232 313 252 325 261 316Z" fill="#272838" stroke="#171824" stroke-width="5"/>
+  <path d="M151 279L180 300 209 279 222 326 208 397 180 386 152 397 138 326Z" fill="#282a3a" stroke="#171824" stroke-width="5"/><path d="M151 279L180 300 166 326 143 307Z M209 279L180 300 194 326 217 307Z" fill="${accent}" stroke="#171824" stroke-width="3"/><path d="M180 300V380" stroke="#10131e" stroke-width="5"/><path d="M180 307V367" stroke="${trim}" stroke-width="2"/><path d="M146 333L159 343M214 333L201 343" stroke="#fff" stroke-opacity=".55" stroke-width="3"/>
+  <path d="M135 286L158 307 146 319 125 298Z" fill="#111722" stroke="${trim}" stroke-width="2"/><path d="M225 286L202 307 214 319 235 298Z" fill="#111722" stroke="${trim}" stroke-width="2"/>
+  <path d="M150 340L164 333 171 349 157 356Z" fill="${accent}" stroke="#171824" stroke-width="3"/><path d="M157 344L164 341" stroke="#fff" stroke-width="2"/>
+  <path d="M113 299L101 329M247 299L259 329" stroke="${accent}" stroke-width="4"/><path d="M129 267L139 273M231 267L221 273" stroke="${trim}" stroke-width="3"/>
+ </g>`};
 let stages=[],index=0,route=null,affection=0,answered=false,audioOn=false,audioContext=null,oscillator=null,gain=null;
 function begin(){route=null;affection=0;stages=intro.slice();index=0;$('startOverlay').classList.add('hidden');$('endOverlay').classList.add('hidden');$('chapterLabel').textContent='A little visual novel';render()}
-function render(){const stage=stages[index];if(!stage)return;if(stage.ending){showEnding();return}answered=false;$('sceneLabel').textContent=stage.scene;$('chapterPill').textContent=stage.pill;$('speaker').textContent=stage.speaker;$('dialogueText').textContent=stage.text;$('choices').innerHTML='';$('choices').classList.toggle('show',!!stage.options);$('nextBtn').style.display=stage.options?'none':'flex';$('chapterLabel').textContent=route?`A story with ${characters[route].name}`:'A little visual novel';$('progressFill').style.width=`${Math.round(index/(stages.length-1)*100)}%`;const el=$('character');if(stage.char){el.innerHTML=characters[stage.char].image;el.className=`character ${characters[stage.char].side}`}else{el.className='character hidden'}if(stage.options)stage.options.forEach(option=>{const button=document.createElement('button');button.className='choice';button.innerHTML=`<span>${option.hint}</span>${option.label}`;button.addEventListener('click',()=>choose(option));$('choices').appendChild(button)})}
+function render(){const stage=stages[index];if(!stage)return;if(stage.ending){showEnding();return}answered=false;$('sceneLabel').textContent=stage.scene;$('chapterPill').textContent=stage.pill;$('speaker').textContent=stage.speaker;$('dialogueText').textContent=stage.text;$('choices').innerHTML='';$('choices').classList.toggle('show',!!stage.options);$('nextBtn').style.display=stage.options?'none':'flex';$('chapterLabel').textContent=route?`A story with ${characters[route].name}`:'A little visual novel';$('progressFill').style.width=`${Math.round(index/(stages.length-1)*100)}%`;const el=$('character');if(stage.char){el.innerHTML=characters[stage.char].image.replace('</svg',`${streetwearDetails(stage.char)}</svg`);el.className=`character ${characters[stage.char].side}`}else{el.className='character hidden'}if(stage.options)stage.options.forEach(option=>{const button=document.createElement('button');button.className='choice';button.innerHTML=`<span>${option.hint}</span>${option.label}`;button.addEventListener('click',()=>choose(option));$('choices').appendChild(button)})}
 function choose(option){if(answered)return;answered=true;if(option.route){route=option.route;affection=1;stages=[...intro,...routeStories[route]]}else affection+=option.points||0;$('speaker').textContent=characters[route].name;$('dialogueText').textContent=option.reply;$('choices').classList.remove('show');$('nextBtn').style.display='flex';$('nextBtn').focus()}
 function next(){const stage=stages[index];if(stage?.options&&!answered)return;index++;render()}
 function showEnding(){const akari=route==='akari',good=affection>=4;$('progressFill').style.width='100%';$('chapterLabel').textContent='The end';$('endingIcon').textContent=good?'✿':'☾';$('endingEyebrow').textContent=good?'A special ending':`A ${akari?'riverside':'greenhouse'} ending`;$('endingTitle').textContent=good?(akari?'Pages in the golden light':'Where the moonflowers bloom'):(akari?'A sketch for tomorrow':'A garden, slowly growing');$('endingText').textContent=good?(akari?'You and Akari make a little ritual of the riverside: shared stories, unfinished sketches, and the comfort of being understood. Some beginnings are quiet—and all the more beautiful for it.':'You and Hana keep returning to the greenhouse, watching the moonflowers open one by one. Beside her, you learn that trust, like a garden, grows at its own unhurried pace.'):(akari?'You and Akari part with a new promise to meet again. Her sketchbook is full of possibilities, and so is the blank page between you.':'You and Hana leave the greenhouse with muddy hands and an invitation to come back. The seedlings are small, but the garden has all summer to grow.');$('endingContent').classList.add('show');$('endOverlay').classList.remove('hidden')}
